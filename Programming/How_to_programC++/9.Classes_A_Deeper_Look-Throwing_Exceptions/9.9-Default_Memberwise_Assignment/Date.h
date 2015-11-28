@@ -6,7 +6,7 @@ class Date
 public:
 	explicit Date(int = 1, int = 1, int = 2000);
 	void print() const;
-	void setDay(int) const; // Error
+	void setDay(int);
 
 private:
 	unsigned int m_day;

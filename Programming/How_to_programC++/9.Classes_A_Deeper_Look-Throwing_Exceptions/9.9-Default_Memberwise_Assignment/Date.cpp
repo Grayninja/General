@@ -12,7 +12,7 @@ void Date::print() const
 }
 
 // This won't compile, because of const keyword!!
-void Date::setDay(int day) const
+void Date::setDay(int day)
 {
 	m_day = day;
 }

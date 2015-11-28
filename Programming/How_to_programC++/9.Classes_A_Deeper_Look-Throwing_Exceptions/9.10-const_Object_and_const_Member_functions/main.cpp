@@ -9,14 +9,14 @@ int main()
 	                      // OBJECT     MEMBER FUNCTION
 	wakeup.setHour(18);   // non-const  non-const
 
-	noon.setHour(12);     // const      non-const --> ERROR!
+	//noon.setHour(12);     // const      non-const --> ERROR!
 
 	wakeup.getHour();     // non-const  const
 
 	noon.getMinute();     // const      const
 	noon.printUniversal();// const      const
 
-	noon.printStandard(); // const      non-const
+	//noon.printStandard(); // const      non-const --> ERROR!
 
 	return 0;
 }

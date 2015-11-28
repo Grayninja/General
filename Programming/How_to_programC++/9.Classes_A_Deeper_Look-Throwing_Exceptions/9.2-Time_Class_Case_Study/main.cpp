@@ -1,11 +1,14 @@
 #include <iostream>
 #include <stdexcept>
+#include <chrono>
+#include <thread>
 #include "Time.h"
+
 
 int main()
 {
 	Time t;
-	
+		
 	std::cout << "The initial universal time is: ";
 	t.printUniversal(); // 00:00:00
 	std::cout << "\nThe initial standard time is: ";
@@ -13,6 +16,8 @@ int main()
 
 	// set new time
 	t.setTime(13, 57, 14);
+
+	std::this_thread::sleep_for(std::chrono::minutes(5));
 
 	std::cout << "\n\nThe universal time after setTime is: ";
 	t.printUniversal(); // 13:57:14
