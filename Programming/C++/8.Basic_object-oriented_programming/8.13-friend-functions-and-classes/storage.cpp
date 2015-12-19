@@ -3,46 +3,46 @@
 class Storage
 {
 private:
-	int m_nValue;
-	double m_dValue;
+    int m_nvalue;
+    double m_dvalue;
 public:
-	Storage(): m_nValue(0),m_dValue(0) {}
-	Storage(int nValue, double dValue)
-	{
-		m_nValue = nValue;
-		m_dValue = dValue;
-	}
 
-	friend class Display;
+    Storage(int nvalue, double dvalue)
+        : m_nvalue(nvalue),
+          m_dvalue(dvalue)
+    {
+    }
+
+    friend class Display;
 };
 
 class Display
 {
-private:
-	bool m_displayIntFirst;
 public:
-	Display(): m_displayIntFirst(true) {}
-	Display(bool displayIntFirst) { m_displayIntFirst = displayIntFirst; }
+    Display(bool displayIntFirst) :
+        m_displayIntFirst(displayIntFirst)
+    {
+    }
 
-	void displayItem(Storage &a_storage)
-	{
-		if (m_displayIntFirst) {
-			std::cout << a_storage.m_nValue << " " 
-				<< a_storage.m_dValue << std::endl;
-		}
-		else {
-			std::cout << a_storage.m_dValue << " "
-				<< a_storage.m_nValue << std::endl;
-		}
-	}
+    void DisplayItem(const Storage &storage) const
+    {
+        if (m_displayIntFirst) {
+            std::cout << storage.m_nvalue << " " << storage.m_dvalue << std::endl;
+        }
+        else {
+            std::cout << storage.m_dvalue << " " << storage.m_nvalue << std::endl;
+        }
+    }
+private:
+    bool m_displayIntFirst;
 };
-
 
 int main()
 {
-	Storage storage(5, 3.1415926);
-	Display display(false);
+    const Storage cStorage(5, 5.3123);
+    const Display cDisplay(false);
 
-	display.displayItem(storage);
-	return 0;
+    cDisplay.DisplayItem(cStorage);
+    
+    return 0;
 }
