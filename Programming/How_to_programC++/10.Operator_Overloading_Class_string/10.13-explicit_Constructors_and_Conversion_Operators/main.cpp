@@ -9,7 +9,7 @@ int main()
     outputArray( integers1 );
 
     // NO ERROR: remove explicit keyword from the constructor and rebuild!
-    outputArray( 3 ); // equivalent to: outputArray( Array( 3 ) );
+    //outputArray( 3 ); // equivalent to: outputArray( Array( 3 ) );
 
     // Compile ERROR: with explicit conversion constructor
     outputArray( Array( 3 ) );
