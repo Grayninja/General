@@ -1,8 +1,8 @@
 SRC_TOP:=../../..
 include $(SRC_TOP)/Makefile.inc
 
-DEPS = DoubleSubScriptedArray.h
-OBJ = main.o DoubleSubscriptedArray.o
+DEPS = Complex.h
+OBJ = main.o Complex.o
 
 %.o: %.cpp $(DEPS)
 	$(CXX) -o $@ $< $(CFLAGS)

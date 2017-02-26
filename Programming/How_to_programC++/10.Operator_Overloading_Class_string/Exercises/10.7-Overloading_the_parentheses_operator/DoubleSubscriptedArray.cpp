@@ -1,7 +1,6 @@
 #include <iostream>
 #include <iomanip>
 #include <stdexcept>
-#include <initializer_list>
 #include "DoubleSubscriptedArray.h"
 
 DoubleSubscriptedArray::DoubleSubscriptedArray( int rows, int columns )
@@ -77,17 +76,6 @@ const DoubleSubscriptedArray& DoubleSubscriptedArray::operator=( const DoubleSub
 
     return *this;
 }
-
-/*// overloaded assignment operator with list initialization support
-const DoubleSubscriptedArray DoubleSubscriptedArray::operator=( 
-        std::initializer_list<std::initializer_list<int>> doubleArrayList )
-{
-    if ( doubleArrayList.size() != _size )
-    {
-    }
-
-}
-*/
 
 // overloaded equality operator
 bool DoubleSubscriptedArray::operator==( const DoubleSubscriptedArray& doubleArray ) const

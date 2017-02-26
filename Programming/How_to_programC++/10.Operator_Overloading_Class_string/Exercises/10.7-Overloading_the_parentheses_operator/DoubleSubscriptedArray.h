@@ -2,7 +2,6 @@
 #define DOUBLE_SUBSCRIPTED_ARRAY_H_
 #include <iostream>
 #include <memory>
-#include <initializer_list>
 
 class DoubleSubscriptedArray
 {
@@ -25,11 +24,6 @@ public:
 
     // overloaded assignment operator
     const DoubleSubscriptedArray& operator=( const DoubleSubscriptedArray& );
-
-    /*// overloaded assignment operator with list initialization support
-    const DoubleSubscriptedArray operator=( 
-            std::initializer_list<std::initializer_list<int>> );
-    */
 
     // overloaded equality operator
     bool operator==( const DoubleSubscriptedArray& ) const;
