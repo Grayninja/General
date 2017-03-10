@@ -1,0 +1,18 @@
+ifneq ($(SUBDIRS),)
+CLEANDIRS = $(SUBDIRS:%=clean-%)
+BUILDIRS = $(SUBDIRS:%=build-%)
+
+.PHONY: all
+all: subdirs
+
+.PHONY: subdirs $(BUILDIRS)
+subdirs: $(BUILDIRS)
+$(BUILDIRS): build-% : %
+	$(MAKE) -C $<
+
+.PHONY: clean $(CLEANDIRS)
+clean: $(CLEANDIRS)
+$(CLEANDIRS): clean-% : %
+	$(MAKE) -C $< clean
+
+endif

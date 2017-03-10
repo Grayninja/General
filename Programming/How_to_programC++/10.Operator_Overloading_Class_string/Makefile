@@ -1,5 +1,5 @@
 SRC_TOP:=..
-include $(SRC_TOP)/Makefile.inc
+include $(SRC_TOP)/rules/Makefile.inc
 
 SUBDIRS = \
    10.2-Using_the_Overloaded_Operators_of_standard_Library_Class_string \
@@ -10,4 +10,4 @@ SUBDIRS = \
    10.13-explicit_Constructors_and_Conversion_Operators \
    Exercises
 
-include $(SRC_TOP)/Makefile.rules
+include $(SRC_TOP)/rules/Makefile.dir

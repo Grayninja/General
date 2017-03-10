@@ -1,5 +1,6 @@
-SRC_TOP:=..
-include ../../Makefile.inc
+SRC_TOP:=../..
+
+include $(SRC_TOP)/rules/Makefile.inc
 
 SUBDIRS = \
 	11.3.1-Creating_and_using_a_CommissionEmployee_class \
@@ -8,18 +9,4 @@ SUBDIRS = \
 	11.3.4-Inheritance_using_protected_data \
 	11.3.5-Inheritance_using_private_data
 
-CLEANDIRS = $(SUBDIRS:%=clean-%)
-BUILDIRS = $(SUBDIRS:%=build-%)
-
-all: subdirs
-
-subdirs: $(BUILDIRS)
-$(BUILDIRS):
-	$(MAKE) -C $(@:build-%=%)
-	
-clean: $(CLEANDIRS)
-$(CLEANDIRS):
-	$(MAKE) -C $(@:clean-%=%) clean
-
-.PHONY: subdirs $(SUBDIRS) $(CLEANDIRS) $(BUILDIRS)
-.PHONY: all clean
+include $(SRC_TOP)/rules/Makefile.dir
