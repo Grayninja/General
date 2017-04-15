@@ -1,30 +1,14 @@
-.PHONY: all clean
-
-ifneq ($(SUBDIRS),)
-CLEANDIRS = $(SUBDIRS:%=clean-%)
-BUILDIRS = $(SUBDIRS:%=build-%)
-
-all: subdirs
-
-subdirs: $(BUILDIRS)
-$(BUILDIRS): build-% : %
-	$(MAKE) -C $<
-	
-clean: $(CLEANDIRS)
-$(CLEANDIRS): clean-% : %
-	$(MAKE) -C $< clean
-
-.PHONY: subdirs $(SUBDIRS) $(CLEANDIRS) $(BUILDIRS)
-else
+.PHONY: all
 all: main
 
 # TODO: all DEPS are dependecies to object files (NOT TRUE!)
 %.o: %.cpp $(DEPS)
 	$(CXX) $(CFLAGS) -o $@ $<
 
+.PHONY: main
 main: $(OBJ)
 	$(CXX) $(LFLAGS) $(LIBS) -o $@ $^ 
 
+.PHONY: clean
 clean:
 	\rm -f *.o main
-endif
