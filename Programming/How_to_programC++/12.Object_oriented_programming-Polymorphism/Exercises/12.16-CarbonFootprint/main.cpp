@@ -12,7 +12,7 @@ int main()
     
     Bicycle giant(15);
     Car toyotaPrius(50, "gasoline", 7);
-    House appartment(4, 2500, 0, 0, 50000, 1000);
+    House appartment(4, 2500, 0, 0, 80000, 1000);
 
     footprints.push_back(giant);
     footprints.push_back(toyotaPrius);
