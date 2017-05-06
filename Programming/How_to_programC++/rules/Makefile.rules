@@ -5,7 +5,6 @@ all: main
 %.o: %.cpp $(DEPS)
 	$(CXX) $(CFLAGS) -o $@ $<
 
-.PHONY: main
 main: $(OBJ)
 	$(CXX) $(LFLAGS) $(LIBS) -o $@ $^ 
 
